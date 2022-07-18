@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from "react-router-dom";
 import { formatDate } from '../../helpers/date';
 import { AiFillStar } from 'react-icons/ai';
 import './index.css';

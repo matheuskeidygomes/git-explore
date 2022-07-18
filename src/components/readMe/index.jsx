@@ -24,7 +24,7 @@ export default function ReadMe(props) {
 
             <h3> Contatos </h3>
             {contacts.map((contact, index) => {
-                return <a href={contact.url} target="_blank"> <img src={contact.badge} key={index} className="badge" alt="contact" /> </a>
+                return <a href={contact.url}  rel="noreferrer" target="_blank"> <img src={contact.badge} key={index} className="badge" alt="contact" /> </a>
             })}
 
         </div>
