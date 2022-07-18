@@ -36,6 +36,8 @@ Acesse clicando no botão abaixo:
 
 # Screenshots
 
+![gitexplore](https://user-images.githubusercontent.com/74063350/179443248-21654826-1e08-42e9-9b22-22babb9d03d0.PNG)
+
 # Pré-requisitos
 
 Será necessário ter instalado em sua máquina as seguintes ferramentas:
