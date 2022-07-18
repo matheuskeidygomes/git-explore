@@ -30,8 +30,8 @@ Projeto criado utilizando a API pública do GitHub. Utilizada para recriar o meu
 
 Acesse clicando no botão abaixo:   
   
-<a href="https://github-explore-api.herokuapp.com/"> 
-    <img src="https://img.shields.io/badge/Heroku-430098?style=for-the-badge&logo=heroku&logoColor=white"/> 
+<a href="https://git-explore-79ocfw8w4-matheuskeidygomes.vercel.app/"> 
+    <img src="https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white"/> 
 </a>
 
 # Screenshots
