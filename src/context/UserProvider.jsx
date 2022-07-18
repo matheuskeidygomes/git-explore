@@ -26,6 +26,8 @@ export const UserProvider = (props) => {
             setLoading(false);
         }
         getData();
+        console.log(repositories);
+        console.log(user);
     }, []);
 
     function addFavorite(repository) {
