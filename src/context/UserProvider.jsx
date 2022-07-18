@@ -1,0 +1,48 @@
+import React, { useEffect, useState } from "react";
+import { createContext } from "react";
+import { gitHubApi } from "../services/metods";
+export const UserContext = createContext();
+
+export const UserProvider = (props) => {
+
+    const [user, setUser] = useState({});
+    const [favorites, setFavorites] = useState([]);
+    const [repositories, setRepositories] = useState([]);
+    const [loading, setLoading] = useState(false);
+
+    useEffect(() => {
+        async function getAllRepositories() {
+            let res = await gitHubApi.getAllRepo();
+            if (res) setRepositories(res);
+        }
+        async function getUser() {
+            let res = await gitHubApi.getUser();
+            if (res) setUser(res);
+        }
+        async function getData() {
+            setLoading(true);
+            await getAllRepositories();
+            await getUser();
+            setLoading(false);
+        }
+        getData();
+    }, []);
+
+    function addFavorite(repository) {
+        if (!favorites.some((favorite) => favorite.id === repository.id)) {
+            setFavorites([...favorites, repository]);
+        }
+    }
+
+    function delFavorite(repository) {
+        if (favorites.some((favorite) => favorite.id === repository.id)) {
+            setFavorites(favorites.filter((favorite) => favorite.id !== repository.id));
+        }
+    }
+
+    return <>
+        <UserContext.Provider value={{ user, favorites, repositories, loading, addFavorite, delFavorite }} >
+            {props.children}
+        </UserContext.Provider>
+    </>
+}

@@ -1,0 +1,30 @@
+.search-container {
+    display: flex;
+    margin: 20px 0px;
+}
+
+.search-bar {
+    border: 1px solid #30363d;
+    background-color: transparent;
+    border-radius: 7px;
+    padding: 8px;
+    outline:none;
+    color:#8b949e;
+    flex:1;
+}
+
+.search-select {
+    background-color: #21262d;
+    color:rgb(194, 194, 194);
+    font-weight: bold;
+    border: 1px solid #30363d;
+    outline: none;
+    border-radius: 7px;
+    padding: 8px;
+    margin:0px 10px;
+}
+
+.search-select:hover {
+    border: 1px solid rgb(194, 194, 194);
+    cursor:pointer;
+}
