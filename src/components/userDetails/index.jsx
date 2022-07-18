@@ -17,7 +17,7 @@ export default function UserDetails(props) {
                 <span className='name-info'> {user.name} </span>
                 <span className='login-info'> {user.login} </span>
                 <span className="bio-info"> {user.bio} </span>
-                <a href={user.html_url} className="button-link" target="_blank">
+                <a href={user.html_url} rel="noreferrer" className="button-link" target="_blank">
                     Ver Perfil no Github
                 </a>
                 <div className="follow-info">

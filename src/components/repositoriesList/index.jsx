@@ -29,7 +29,7 @@ export default function RepositoriesList(props) {
                             <div key={i} className="list-repo-item">
 
                                 <div className='list-repo-column-one'>
-                                    <h3> <a className="link" target="_blank" href={repo.html_url}>  {repo.name} </a> </h3>
+                                    <h3> <a className="link" rel="noreferrer" target="_blank" href={repo.html_url}>  {repo.name} </a> </h3>
 
                                     <div className="list-repo-item-details">
                                         <p> {repo.language} </p>

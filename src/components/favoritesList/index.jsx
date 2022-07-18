@@ -29,7 +29,7 @@ export default function FavoritesList(props) {
                             <div key={i} className="favorite-item">
 
                                 <div className='list-favorite-column-one'>
-                                    <h3> <a className="link" href={repo.html_url}>  {repo.name} </a> </h3>
+                                    <h3> <a className="link" href={repo.html_url} rel="noreferrer">  {repo.name} </a> </h3>
 
                                     <div className="list-favorite-item-details">
                                         <p> {repo.language} </p>
