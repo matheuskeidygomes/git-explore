@@ -2,7 +2,6 @@ import React, { useEffect, useState, useContext } from 'react';
 import { BiBookBookmark } from 'react-icons/bi';
 import { RiProfileLine } from 'react-icons/ri';
 import { AiOutlineStar } from 'react-icons/ai';
-import { getStorageData } from '../../helpers/dataStorage';
 import { UserContext } from '../../context/UserProvider';
 import { Link } from 'react-router-dom';
 import './index.css';
@@ -10,8 +9,6 @@ import './index.css';
 export default function NavigationBar() {
 
     const context = useContext(UserContext);
-    const [repositories, setRepositories] = useState([]);
-    const [favorites, setFavorites] = useState([]);
     const [markedPage, setMarkedPage] = useState("");
     const navigation = [
         { name: "Perfil", url: "/", icon: <RiProfileLine className="nav-icon" /> },
@@ -24,12 +21,6 @@ export default function NavigationBar() {
         if (marked) setMarkedPage(marked.name);
     }, []);
 
-    useEffect(() => {
-        setRepositories(context.repositories);
-        if(getStorageData("favorites")) setFavorites(getStorageData("favorites")); 
-        else setFavorites(context.favorites); 
-    }, [context.repositories, context.favorites]);
-
     return <>
 
         <div className="navigation-bar">
@@ -40,7 +31,7 @@ export default function NavigationBar() {
                         <span className="nav-span"> {nav.name} </span>
                         {nav.name !== "Perfil" &&
                             <span className="nav-span-circle">
-                                {nav.name === "Repositórios" ? repositories.length : favorites.length}
+                                {nav.name === "Repositórios" ? context.repositories.length : context.favorites.length}
                             </span>
                         }
                     </Link>
