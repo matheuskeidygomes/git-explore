@@ -21,6 +21,7 @@ export const UserProvider = (props) => {
             if (res) setUser(res);
         }
         async function getFavorites() {
+            console.log(getStorageData("favorites"));
             if(getStorageData("favorites")) setFavorites(getStorageData("favorites"));
         }
         async function getData() {
