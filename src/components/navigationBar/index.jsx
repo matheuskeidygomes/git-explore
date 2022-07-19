@@ -26,8 +26,9 @@ export default function NavigationBar() {
 
     useEffect(() => {
         setRepositories(context.repositories);
-        setFavorites(getStorageData("favorites"));
-    }, []);
+        if(getStorageData("favorites")) setFavorites(getStorageData("favorites"))
+        else setFavorites([context.favorites]);
+    }, [context.repositories, context.favorites]);
 
     return <>
 
@@ -39,7 +40,7 @@ export default function NavigationBar() {
                         <span className="nav-span"> {nav.name} </span>
                         {nav.name !== "Perfil" &&
                             <span className="nav-span-circle">
-                                {nav.name === "Repositórios" ? repositories.length : favorites.length }
+                                {nav.name === "Repositórios" ? repositories.length : favorites.length}
                             </span>
                         }
                     </Link>
