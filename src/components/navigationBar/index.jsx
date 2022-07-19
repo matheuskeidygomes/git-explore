@@ -26,8 +26,8 @@ export default function NavigationBar() {
 
     useEffect(() => {
         setRepositories(context.repositories);
-        if(getStorageData("favorites")) setFavorites(getStorageData("favorites"))
-        else setFavorites([context.favorites]);
+        if(getStorageData("favorites")) setFavorites(getStorageData("favorites")); 
+        else setFavorites(context.favorites); 
     }, [context.repositories, context.favorites]);
 
     return <>
