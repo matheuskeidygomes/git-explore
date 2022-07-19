@@ -4,8 +4,10 @@ export function doSearch(search, filter, list) {
             return item.name.toLowerCase().includes(search.toLowerCase());
         } else if (filter === "Tecnologia") {
             return item.language?.toLowerCase().includes(search.toLowerCase());
-        } else if (filter === "Descrição") {
-            return item.description?.toLowerCase().includes(search.toLowerCase());
+        } else if (filter === "Público" && !item.private) {
+            return item.name.toLowerCase().includes(search.toLowerCase());
+        } else {
+            return item;
         }
     });
     return filtered;

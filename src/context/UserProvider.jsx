@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { createContext } from "react";
 import { gitHubApi } from "../services/metods";
+import { saveStorageData, getStorageData } from "../helpers/dataStorage";
 export const UserContext = createContext();
 
 export const UserProvider = (props) => {
@@ -19,26 +20,30 @@ export const UserProvider = (props) => {
             let res = await gitHubApi.getUser();
             if (res) setUser(res);
         }
+        async function getFavorites() {
+            if(getStorageData("favorites")) setFavorites(getStorageData("favorites"));
+        }
         async function getData() {
             setLoading(true);
             await getAllRepositories();
             await getUser();
+            await getFavorites();
             setLoading(false);
         }
         getData();
-        console.log(repositories);
-        console.log(user);
     }, []);
 
     function addFavorite(repository) {
         if (!favorites.some((favorite) => favorite.id === repository.id)) {
             setFavorites([...favorites, repository]);
+            saveStorageData("favorites", [...favorites, repository]);
         }
     }
 
     function delFavorite(repository) {
         if (favorites.some((favorite) => favorite.id === repository.id)) {
             setFavorites(favorites.filter((favorite) => favorite.id !== repository.id));
+            saveStorageData("favorites", favorites.filter((favorite) => favorite.id !== repository.id));
         }
     }
 

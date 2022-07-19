@@ -19,7 +19,7 @@ export default function Favorites() {
     return <>
 
         <SearchBar
-            search={(search, filter) => setFavoritesToShow(doSearch(search, filter, favorites))}
+            doSearch={(search, filter) => setFavoritesToShow(doSearch(search, filter, favorites))}
             sortByName={() => setFavoritesToShow(sortRepositoriesByName(favoritesToShow))}
             sortByDate={() => setFavoritesToShow(sortRepositoriesByUpdated(favoritesToShow))}
         />

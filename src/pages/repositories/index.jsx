@@ -21,7 +21,7 @@ export default function Repositories() {
     return <>
 
         <SearchBar
-            search={(search, filter) => setRepositoriesToShow(doSearch(search, filter, repositories))}
+            doSearch={(search, filter) => setRepositoriesToShow(doSearch(search, filter, repositories))}
             sortByDate={() => setRepositoriesToShow(sortRepositoriesByUpdated(repositoriesToShow))}
             sortByName={() => setRepositoriesToShow(sortRepositoriesByName(repositoriesToShow))}
         />
