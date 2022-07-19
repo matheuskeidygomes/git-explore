@@ -12,7 +12,7 @@ export default function ReadMe(props) {
 
             <img src="/imgs/mariogif.gif" className="mario-gif" alt="mario" />
 
-            <h1> 👋 Olá! Me chamo @matheuskeidygomes </h1>
+            <h1> 👋 Olá! Me chamo @{props.user.login} </h1>
 
             <div className="line"></div>
 
