@@ -42,10 +42,6 @@ export default function UserDetails() {
                         {loading ? loadingComponent("span-small") : user.followers} Seguidores
                     </span>
                 </div>
-                <div className="company-info">
-                    <img src="/imgs/company.png" alt="company" className="icon" />
-                    <span> {loading ? loadingComponent("span") : user.company} </span>
-                </div>
                 <div className="location-info">
                     <img src="/imgs/local.png" alt="location" className="icon" />
                     <span> {loading ? loadingComponent("span") : user.location} </span>
